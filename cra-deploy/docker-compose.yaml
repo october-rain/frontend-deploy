@@ -1,0 +1,8 @@
+version: "3"
+services:
+  cra:
+    build:
+      context: .
+      dockerfile: cra.Dockerfile 
+    ports:
+      - 3333:80

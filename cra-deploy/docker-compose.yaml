@@ -6,3 +6,9 @@ services:
       dockerfile: cra.Dockerfile 
     ports:
       - 3333:80
+  router:
+    build:
+      context: .
+      dockerfile: router.Dockerfile
+    ports:
+      - 4444:80

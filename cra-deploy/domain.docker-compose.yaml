@@ -1,0 +1,17 @@
+version: "3"
+services: 
+  domain:
+    build: 
+      context: .
+      dockerfile: router.Dockerfile
+    labels:
+      - "traefik.http.routers.cra.rule=Host(`whoi.dev.shanyue.tech`)"
+
+      # 配置 TLS
+      - traefik.http.routers.cra.tls=true
+      - traefik.http.routers.cra.tls.certresolver=le
+
+networks:
+  default: 
+    external:
+      name: traefik_default
